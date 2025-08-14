@@ -20,6 +20,11 @@ public class UIComponentController {
         return service.getAll();
     }
 
+    @GetMapping("/{id}")
+    public UIComponent getById(@PathVariable String id){
+        return service.getById(id);
+    }
+
     @PostMapping
     public UIComponent create(@RequestBody UIComponent component){
         return service.create(component);

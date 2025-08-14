@@ -37,4 +37,8 @@ public class UIComponentService {
         }
         repository.deleteById(id);
     }
+    public UIComponent getById(String id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Component not found with ID: " + id));    
+    }
 }
